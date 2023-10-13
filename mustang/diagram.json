@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -12.6, "left": -218, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 221.4, "left": -48.6, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -321.89,
+      "left": -85.52,
+      "attrs": { "size": "2", "arrow": "orange" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 67.3,
+      "left": 25.5,
+      "rotate": 270,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 71.6, "left": -92.9, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper2",
+      "top": -321.89,
+      "left": 164.08,
+      "attrs": { "size": "2", "arrow": "orange" }
+    }
+  ],
+  "connections": [
+    [ "bb1:28t.b", "uno:12", "green", [ "v0" ] ],
+    [ "bb1:28b.j", "uno:GND.1", "green", [ "v0" ] ],
+    [ "bb1:26b.j", "uno:5V", "green", [ "v0" ] ],
+    [ "btn1:1.l", "bb1:26b.h", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb1:28b.h", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb1:26t.c", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb1:28t.c", "", [ "$bb" ] ],
+    [ "sw1:1", "bb1:12b.f", "", [ "$bb" ] ],
+    [ "sw1:2", "bb1:13b.f", "", [ "$bb" ] ],
+    [ "sw1:3", "bb1:14b.f", "", [ "$bb" ] ],
+    [ "bb1:14b.j", "uno:7", "green", [ "v0" ] ],
+    [ "uno:11", "bb1:31t.e", "green", [ "v0" ] ],
+    [ "uno:10", "bb1:32t.e", "green", [ "v0" ] ],
+    [ "uno:9", "bb1:33t.e", "green", [ "v0" ] ],
+    [ "bb1:34t.e", "uno:8", "green", [ "v0" ] ],
+    [ "bb1:31t.a", "stepper1:A-", "green", [ "v0" ] ],
+    [ "bb1:32t.a", "stepper1:A+", "green", [ "v0" ] ],
+    [ "bb1:33t.a", "stepper1:B+", "green", [ "v0" ] ],
+    [ "bb1:34t.a", "stepper1:B-", "green", [ "v0" ] ],
+    [ "stepper2:A-", "bb1:31t.b", "green", [ "v0" ] ],
+    [ "stepper2:A+", "bb1:32t.b", "green", [ "v0" ] ],
+    [ "stepper2:B+", "bb1:33t.b", "green", [ "v0" ] ],
+    [ "stepper2:B-", "bb1:34t.b", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
